@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Phaser Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+      @font-face {
+            font-family: 'Pixels';
+            src: url('assets/Pixels.ttf') format('truetype');
+        }
+    
+      @font-face {
+            font-family: 'Pixels2';
+            src: url('assets/pixelsix10.ttf') format('truetype');
+      }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+    }
+    #endDialog {
+            top: 100px;           
+            font-size: 40px;
+            font-family: 'Pixels';
+            text-align: center;
+            z-index: 1000;
+        }
+     #endDialog button {            
+            padding-top: 0px;
+            padding-bottom: 5px;
+            background: white;
+            color: black;
+            font-family: 'Pixels';
+            font-size: 38px;
+            border-radius: 3.5px;
+            cursor: pointer;
+        }
+      
+      #tip {
+            top: 100px;           
+            font-size: 40px;
+            font-family: 'Pixels';
+            text-align: center;
+            z-index: 1000;
+        }
+      
+        #tip button {
+            padding-top: 0px;
+            padding-bottom: 5px;
+            background: white;
+            color: black;
+            font-family: 'Pixels';
+            font-size: 38px;
+            border-radius: 3.5px;
+            cursor: pointer;
+        }
+
+        #tip2 {
+            top: 100px;           
+            font-size: 40px;
+            font-family: 'Pixels';
+            text-align: center;
+            z-index: 1000;
+        }
+      
+        #tip2 button {
+            padding-top: 0px;
+            padding-bottom: 5px;
+            background: white;
+            color: black;
+            font-family: 'Pixels';
+            font-size: 38px;
+            border-radius: 3.5px;
+            cursor: pointer;
+        }
+  </style>
+</head>
+<body> 
+  <div id="endDialog" style="display: none;">
+    <p style="color:white">Congrats! You kept your mood in balance.
+      Remember, every emotion matters</p>
+    <button onclick="restartGame()">Restart</button>
+</div>
+
+<div id="tip" style="display: none;">
+  <p style="color:white">Oops! You touched a dangerous obstacle.</p>
+  <button onclick="restartLevel()">Restart</button>
+</div>
+
+<div id="tip2" style="display: none;">
+  <p style="color:white">Try again! Balance your mood.</p>
+  <button onclick="restartLevel()">Restart</button>
+</div>
+
+<script>
+  function restartGame() {
+      location.reload();
+  }
+
+  function restartLevel(){
+    const gameScene = window.game.scene.getScene('GameScene');
+    const currentLevel = gameScene.levelIndex;
+    // 隐藏字幕提示
+    const tipDiv = document.getElementById('tip');
+    const tipDiv2 = document.getElementById('tip2');
+    if (tipDiv) tipDiv.style.display = 'none';
+    if (tipDiv2) tipDiv2.style.display = 'none';
+    gameScene.scene.restart({ levelIndex: currentLevel, skipIntro: true });
+    
+  }
+</script>
+
+</body>
+</html>
+
+</html>
