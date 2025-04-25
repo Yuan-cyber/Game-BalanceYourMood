@@ -1,8 +1,10 @@
-# This game is all about keeping your mood balanced
+# Balance Your Mood
 
 ## Overview
 This game is built on the Phaser game boilerplate and further expanded with new mechanics, assets, and features.
+
 Players control a character using arrow keys, navigating a pixel-art world filled with platforms and obstacles.
+
 Throughout the journey, you’ll collect various emotions and work to keep your mood in balance. Eliminate obstacles to clear the way and progress through the levels.
 
 ## Play the game online
